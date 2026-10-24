@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install --allow-scripts=esbuild,@parcel/watcher
+        run: npm install
 
       - name: Build Quartz
         run: npx quartz build
