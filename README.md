@@ -1,17 +1,17 @@
-# Quartz v5
+# inprocess.garden
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+A personal knowledge garden by Crystal Dixson.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+I make things, chase new interests, and collect them with very little concern for how many are already in progress.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+I'm interested in technology, food, language, and the hidden processes behind things. I have a habit of getting curious about something and following it considerably further than I originally intended.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+My professional background includes applied linguistics, data science, customer experience, and QA. Cooking was a past life.
 
-## Sponsors
+I'm surrounded by exercise equipment and currently fixated on ballet and yoga.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+This site is somewhere to put my projects, notes, and recipes without pretending they're finished or particularly related. Some of it is about learning with technology. Some of it is experimentation. Some of it is simply something I found interesting enough to write down.
+
+---
+
+Built with [Quartz v5](https://quartz.jzhao.xyz), hosted on [Cloudflare Pages](https://pages.cloudflare.com).

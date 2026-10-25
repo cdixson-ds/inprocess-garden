@@ -1,13 +1,13 @@
 ---
 title: In Process Website
-description: Building this site — a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.
+description: Building this site - a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.
 tags: [projects, web, obsidian, quartz]
 status: active
 ---
 
 # In Process Website
 
-Building `inprocess.garden` — a personal digital garden for projects, notes, and recipes.
+Building `inprocess.garden` - a personal digital garden for projects, notes, and recipes.
 
 ## Stack
 
