@@ -11,15 +11,9 @@ Projects, notes, recipes, and the occasional useful discovery. Some things are h
 
 ---
 
-## From the collection
+**From the collection**
 
-<div class="card">
-  <div class="card-category">Project</div>
-
-  ### [[projects/in-process-website|In Process Website]]
-
-  Building this site - a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.
-</div>
+[[projects/in-process-website|In Process Website]] — Building this site, a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.
 
 ---
 
