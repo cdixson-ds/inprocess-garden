@@ -239,3 +239,11 @@ hr {
   article > h1 { font-size: 1.9rem; }
   body { font-size: 15px; }
 }
+
+// --- Hide explorer collapse toggle ---
+#explorer > .fold-content > button.fold-toggle,
+button#explorer-toggle,
+.explorer-toggle,
+#explorer-content .fold-toggle {
+  display: none !important;
+}
