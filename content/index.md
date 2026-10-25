@@ -11,10 +11,4 @@ Projects, notes, recipes, and the occasional useful discovery. Some things are h
 
 ---
 
-**From the collection**
-
-[[projects/in-process-website|In Process Website]] — Building this site, a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.
-
----
-
-→ [[projects/index|Projects]] · [[notes/index|Notes]] · [[recipes/index|Recipes]] · [[about|About]]
+[[projects/in-process-website|In Process Website]] - Building this site, a personal digital garden with Obsidian, Quartz, and Cloudflare Pages.

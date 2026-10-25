@@ -104,6 +104,51 @@ export default (() => {
             return resource
           }
         })}
+      <script dangerouslySetInnerHTML={{__html: `
+(function() {
+  function injectNav() {
+    var sidebar = document.querySelector('.sidebar.left');
+    if (!sidebar || document.querySelector('.primary-nav')) return;
+    var baseDir = document.body.dataset.basepath !== undefined
+      ? (document.body.dataset.basepath || '')
+      : '';
+    var nav = document.createElement('nav');
+    nav.className = 'primary-nav';
+    var links = [
+      ['Projects', baseDir + '/projects/'],
+      ['Notes', baseDir + '/notes/'],
+      ['Recipes', baseDir + '/recipes/'],
+      ['About', baseDir + '/about']
+    ];
+    links.forEach(function(l) {
+      var a = document.createElement('a');
+      a.href = l[1];
+      a.textContent = l[0];
+      var currentSlug = document.body.dataset.slug || '';
+      var section = l[0].toLowerCase();
+      if (currentSlug === section || currentSlug.startsWith(section + '/')) {
+        a.className = 'active';
+      }
+      nav.appendChild(a);
+    });
+    // Insert after toolbar flex-component (search+darkmode)
+    var toolbar = sidebar.querySelector('.flex-component');
+    if (toolbar) {
+      toolbar.parentNode.insertBefore(nav, toolbar.nextSibling);
+    } else {
+      sidebar.appendChild(nav);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectNav);
+  } else {
+    injectNav();
+  }
+  // Re-inject on SPA navigation
+  document.addEventListener('nav', injectNav);
+})();
+`}} />
+
       </head>
     )
   }

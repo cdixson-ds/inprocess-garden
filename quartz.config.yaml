@@ -149,7 +149,7 @@ plugins:
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"
-    enabled: true
+    enabled: false
     options:
       folderClickBehavior: link
       folderDefaultState: open
@@ -278,8 +278,12 @@ layout:
     folder:
       exclude:
         - reader-mode
+        - content-meta
+        - breadcrumbs
     tag:
       exclude:
         - reader-mode
+        - content-meta
+        - breadcrumbs
     canvas: {}
     bases: {}

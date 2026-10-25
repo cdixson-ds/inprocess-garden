@@ -313,3 +313,94 @@ hr {
     height: 200px !important;
   }
 }
+
+
+// ============================================================
+// PRIMARY NAVIGATION (injected by Head.tsx script)
+// ============================================================
+
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.primary-nav a {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--darkgray);
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-bottom: none !important;
+  background: none !important;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+  color: var(--secondary);
+  border-bottom: none !important;
+}
+
+// ============================================================
+// GRAPH VIEW — prominent
+// ============================================================
+
+.graph .graph-outer {
+  min-height: 260px;
+}
+
+.graph h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 0.5rem;
+}
+
+// ============================================================
+// HIDE READING TIME on home and about
+// ============================================================
+
+body[data-slug="index"] .content-meta,
+body[data-slug="about"] .content-meta {
+  display: none !important;
+}
+
+// ============================================================
+// MOBILE NAV
+// ============================================================
+
+@media all and ($mobile) {
+  // Sidebar.left: column so nav stacks below title/toolbar
+  .sidebar.left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1rem 1rem 0.5rem !important;
+    gap: 0 !important;
+  }
+
+  .primary-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    width: 100%;
+  }
+
+  .primary-nav a {
+    font-size: 0.85rem;
+  }
+
+  .graph .graph-outer {
+    min-height: 200px !important;
+  }
+}
