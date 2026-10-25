@@ -247,3 +247,15 @@ button#explorer-toggle,
 #explorer-content .fold-toggle {
   display: none !important;
 }
+
+// --- Hide TOC collapse toggle ---
+button.toc-toggle,
+.toc-toggle,
+#toc-content .fold-toggle,
+button[aria-controls="toc-content"] {
+  display: none !important;
+}
+
+#toc-content {
+  display: block !important;
+}
