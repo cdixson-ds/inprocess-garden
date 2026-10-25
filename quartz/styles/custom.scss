@@ -1,3 +1,241 @@
 @use "./variables.scss" as *;
+// ============================================================
+// inprocess.garden — Custom Design
+// Fonts: Fraunces (editorial) / DM Sans (body) / IBM Plex Mono (code)
+// ============================================================
 
-// put your custom CSS here!
+// --- Body & base text ---
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin-bottom: 1.2em;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+// --- Headings: Fraunces ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+h2 { font-size: 1.6rem;  margin-top: 2.5rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.4rem; }
+
+article > h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+// --- Navigation ---
+.nav-wrapper, nav, #quartz-header {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+// --- Site title ---
+.page-title, #quartz-header h1 {
+  font-family: "Fraunces", Georgia, serif !important;
+  font-weight: 500 !important;
+  font-size: 1.25rem !important;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+// --- Code & mono ---
+code, kbd, pre, .meta, time, .content-meta {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.8125rem;
+}
+
+pre {
+  padding: 1.25rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  line-height: 1.6;
+  border: 1px solid var(--lightgray);
+}
+
+code {
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  background-color: var(--highlight);
+}
+
+// --- Links ---
+a {
+  font-weight: 400;
+  transition: color 0.15s ease;
+}
+
+a.internal {
+  background-color: transparent;
+  border-bottom: 1px solid var(--lightgray);
+  padding: 0;
+  border-radius: 0;
+
+  &:hover {
+    border-bottom-color: var(--secondary);
+    color: var(--secondary);
+    background-color: transparent;
+  }
+}
+
+// --- Content meta / dates ---
+.content-meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 2rem;
+}
+
+// --- Tables ---
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+
+  th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--lightgray);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid var(--lightgray);
+    padding: 0.5rem 0.75rem;
+  }
+
+  tr:last-child td { border-bottom: none; }
+}
+
+// --- Blockquotes ---
+blockquote {
+  border-left: 2px solid var(--secondary);
+  margin: 1.5rem 0;
+  padding: 0.5rem 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+
+  p { margin-bottom: 0; }
+}
+
+// --- Cards ---
+.card {
+  background-color: var(--highlight);
+  border: 1px solid var(--lightgray);
+  border-radius: 3px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  .card-category {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    opacity: 0.85;
+    margin-bottom: 0;
+  }
+}
+
+// --- Graph view ---
+#graph-container {
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+}
+
+// --- Footer ---
+footer {
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.03em;
+  border-top: 1px solid var(--lightgray);
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+// --- Explorer sidebar ---
+#explorer {
+  font-size: 0.875rem;
+}
+
+// --- Breadcrumbs ---
+.breadcrumb-container {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  margin-bottom: 1.5rem;
+}
+
+// --- Tags ---
+.tag-link {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  padding: 0.15em 0.5em;
+  border-radius: 2px;
+  border: 1px solid var(--lightgray);
+  background: transparent;
+
+  &:hover {
+    background-color: var(--highlight);
+    border-color: var(--secondary);
+  }
+}
+
+// --- Mono label (homepage hero) ---
+.mono-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+// --- Horizontal rules ---
+hr {
+  border: none;
+  border-top: 1px solid var(--lightgray);
+  margin: 2.5rem 0;
+}
+
+// --- Mobile refinements ---
+@media all and ($mobile) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  article > h1 { font-size: 1.9rem; }
+  body { font-size: 15px; }
+}

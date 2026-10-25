@@ -17,30 +17,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: Fraunces
+      body: DM Sans
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#F7F3F2"
+        lightgray: "#D8CCD6"
+        gray: "#625967"
+        darkgray: "#302932"
+        dark: "#302932"
+        secondary: "#76527A"
+        tertiary: "#536B5D"
+        highlight: rgba(118, 82, 122, 0.10)
+        textHighlight: "#76527A33"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#211F28"
+        lightgray: "#504650"
+        gray: "#C3B9C8"
+        darkgray: "#F0EAF0"
+        dark: "#F0EAF0"
+        secondary: "#D8B5D2"
+        tertiary: "#AAC1AE"
+        highlight: rgba(216, 181, 210, 0.12)
+        textHighlight: "#D8B5D244"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
