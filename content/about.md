@@ -16,4 +16,4 @@ My professional background includes applied linguistics, data science, customer 
 
 I'm surrounded by exercise equipment and currently fixated on ballet and yoga.
 
-This site is somewhere to put my [[Projects]], [[Writing]], and [[Notes]] without pretending they're finished or particularly related. Some of it is about learning with technology. Some of it is experimentation. Some of it is simply something I found interesting enough to write down.
+This site is somewhere to put my [[notes/index|Notes]], [[projects/index|Projects]], and [[recipes/index|Recipes]] without pretending they're finished or particularly related. Some of it is about learning with technology. Some of it is experimentation. Some of it is simply something I found interesting enough to write down.
