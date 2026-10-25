@@ -1,7 +1,9 @@
 ---
 title: Notes
+description: Knowledge, observations, and substantial thoughts worth preserving.
+tags: [notes]
 ---
 
 # Notes
 
-The digital garden — interconnected, evolving ideas.
+Knowledge, observations, investigations, and substantial thoughts worth preserving. Format varies by subject.

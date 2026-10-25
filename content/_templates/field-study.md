@@ -1,21 +1,23 @@
 ---
-title: "Field Study: {{title}}"
-tags: [field-study]
-date: {{date}}
+title: "Field Study: Title"
+tags: [notes, field-study]
+date: 
 ---
+
+# Field Study: Title
 
 ## Context
 
-_What prompted this experiment or investigation?_
+What prompted this investigation?
 
 ## Variables
 
-_What conditions, tools, methods, or factors were involved?_
+What conditions, tools, or factors were involved?
 
 ## Observations
 
-_What happened? What did I discover?_
+What happened?
 
 ## Takeaway
 
-_What did I learn, and what might I do differently?_
+What did I learn?

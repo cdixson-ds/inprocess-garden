@@ -10,8 +10,9 @@ configuration:
   baseUrl: inprocess.garden
   ignorePatterns:
     - private
-    - templates
+    - _templates
     - .obsidian
+    - assets
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -220,7 +221,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/cdixson-ds/quietprocess
+        GitHub: https://github.com/cdixson-ds/inprocess-garden
     layout:
       position: footer
       priority: 50
@@ -239,7 +240,7 @@ plugins:
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
-    enabled: true
+    enabled: false
     options:
       includeAll: false
       includedProperties:
