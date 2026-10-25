@@ -8,7 +8,7 @@ tags:
 
 # About
 
-I'm Crystal. I make things, chase new curiosities, and collect interests with very little concern for how many are already in progress.
+I'm Crystal. I make things, chase new interests, and collect them with very little concern for how many are already in progress.
 
 I'm interested in technology, food, language, and the hidden processes behind things. I have a habit of getting curious about something and following it considerably further than I originally intended.
 
