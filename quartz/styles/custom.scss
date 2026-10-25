@@ -1,10 +1,10 @@
 @use "./variables.scss" as *;
 // ============================================================
 // inprocess.garden — Custom Design
-// Fonts: Fraunces (editorial) / DM Sans (body) / IBM Plex Mono (code)
+// Fraunces / DM Sans / IBM Plex Mono
 // ============================================================
 
-// --- Body & base text ---
+// --- Body ---
 body {
   font-size: 16px;
   line-height: 1.7;
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
-h2 { font-size: 1.6rem;  margin-top: 2.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.6rem; margin-top: 2.5rem; margin-bottom: 0.5rem; }
 h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.4rem; }
 
 article > h1 {
@@ -64,6 +64,7 @@ pre {
   overflow-x: auto;
   line-height: 1.6;
   border: 1px solid var(--lightgray);
+  box-sizing: border-box;
 }
 
 code {
@@ -91,7 +92,7 @@ a.internal {
   }
 }
 
-// --- Content meta / dates ---
+// --- Content meta ---
 .content-meta {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
@@ -123,6 +124,11 @@ table {
   }
 
   tr:last-child td { border-bottom: none; }
+}
+
+// Tables scroll horizontally on narrow screens
+.center article div {
+  overflow-x: auto;
 }
 
 // --- Blockquotes ---
@@ -183,7 +189,7 @@ footer {
   padding-top: 1rem;
 }
 
-// --- Explorer sidebar ---
+// --- Explorer ---
 #explorer {
   font-size: 0.875rem;
 }
@@ -214,7 +220,7 @@ footer {
   }
 }
 
-// --- Mono label (homepage hero) ---
+// --- Mono label ---
 .mono-label {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.6875rem;
@@ -232,74 +238,37 @@ hr {
   margin: 2.5rem 0;
 }
 
-// --- Mobile refinements ---
+// --- Desktop: hide explorer fold SVG ---
+.desktop-explorer svg.fold {
+  display: none !important;
+}
+
+// ============================================================
+// MOBILE
+// Quartz has native mobile layout and a hamburger explorer toggle.
+// We must not override the grid or sidebar display.
+// Only adjust typography and content width.
+// ============================================================
 @media all and ($mobile) {
+  // Typography
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.35rem; }
   article > h1 { font-size: 1.9rem; }
   body { font-size: 15px; }
-}
 
-// --- Hide explorer collapse toggle ---
-#explorer > .fold-content > button.fold-toggle,
-button#explorer-toggle,
-.explorer-toggle,
-#explorer-content .fold-toggle {
-  display: none !important;
-}
-
-// --- Hide TOC collapse toggle ---
-#table-of-contents > h3 > svg.fold,
-.toc h3 svg.fold,
-nav.toc h3 svg.fold {
-  display: none !important;
-}
-
-#table-of-contents ul,
-.toc ul {
-  display: block !important;
-}
-
-// --- Mobile layout fixes ---
-@media all and ($mobile) {
-  // Collapse left sidebar on mobile
-  #quartz-body {
-    display: flex;
-    flex-direction: column;
+  // Prevent content overflow
+  article {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
-  .sidebar.left {
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  // Hide explorer on mobile, keep graph
-  #explorer {
-    display: none !important;
-  }
-
-  // Graph shows below content on mobile
-  #graph-container,
-  .graph {
-    display: block !important;
-    width: 100% !important;
-    margin-top: 2rem;
-  }
-
-  // Ensure main content is full width
-  #quartz-center,
-  .center {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 1rem !important;
-  }
-
-  // Right sidebar goes below content on mobile
-  .sidebar.right {
-    width: 100% !important;
-    position: relative !important;
+  // Readable margins on small screens
+  .page-header,
+  article {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
   }
 }
