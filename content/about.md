@@ -14,4 +14,6 @@ I'm interested in technology, food, language, and the hidden processes behind th
 
 My professional background includes applied linguistics, data science, customer experience, and QA. Cooking was a past life.
 
+I'm surrounded by exercise equipment and currently fixated on ballet and yoga.
+
 This site is somewhere to put my [[Projects]], [[Writing]], and [[Notes]] without pretending they're finished or particularly related. Some of it is about learning with technology. Some of it is experimentation. Some of it is simply something I found interesting enough to write down.
