@@ -276,11 +276,17 @@ nav.toc h3 svg.fold {
     overflow: visible !important;
   }
 
-  // Hide explorer and graph on mobile to avoid clutter
-  #explorer,
+  // Hide explorer on mobile, keep graph
+  #explorer {
+    display: none !important;
+  }
+
+  // Graph shows below content on mobile
   #graph-container,
   .graph {
-    display: none !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 2rem;
   }
 
   // Ensure main content is full width
