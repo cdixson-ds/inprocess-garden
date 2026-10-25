@@ -150,6 +150,12 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      folderClickBehavior: link
+      folderDefaultState: open
+      useSavedState: false
+      filterFn: null
+      sortFn: null
     layout:
       position: left
       priority: 50
