@@ -249,13 +249,13 @@ button#explorer-toggle,
 }
 
 // --- Hide TOC collapse toggle ---
-button.toc-toggle,
-.toc-toggle,
-#toc-content .fold-toggle,
-button[aria-controls="toc-content"] {
+#table-of-contents > h3 > svg.fold,
+.toc h3 svg.fold,
+nav.toc h3 svg.fold {
   display: none !important;
 }
 
-#toc-content {
+#table-of-contents ul,
+.toc ul {
   display: block !important;
 }
