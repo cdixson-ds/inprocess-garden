@@ -1,5 +1,8 @@
 import esbuild from "esbuild"
 import remarkParse from "remark-parse"
+import remarkFrontmatter from "remark-frontmatter"
+import { parse as parseYaml } from "yaml"
+import { visit } from "unist-util-visit"
 import remarkRehype from "remark-rehype"
 import { Processor, unified } from "unified"
 import { Root as MDRoot } from "remark-parse/lib"
@@ -25,6 +28,21 @@ export function createMdProcessor(ctx: BuildCtx): QuartzMdProcessor {
     unified()
       // base Markdown -> MD AST
       .use(remarkParse)
+      // Parse and strip YAML frontmatter from AST
+      .use(remarkFrontmatter, ["yaml"])
+      // Extract frontmatter into file.data.frontmatter
+      .use(() => (tree, file) => {
+        visit(tree, "yaml", (node: { value: string }, index: number, parent: { children: unknown[] }) => {
+          try {
+            file.data.frontmatter = parseYaml(node.value) ?? {}
+          } catch {
+            file.data.frontmatter = {}
+          }
+          if (parent && index !== null) {
+            parent.children.splice(index, 1)
+          }
+        })
+      })
       // MD AST -> MD AST transforms
       .use(
         transformers.flatMap((plugin) => plugin.markdownPlugins?.(ctx) ?? []),
