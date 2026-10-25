@@ -1,7 +1,17 @@
 ---
 title: About
+description: A little about me and what this place is.
+tags:
+  - about
+  - digital-garden
 ---
 
 # About
 
-Crystal Dixson — Applied Linguistics, data science, CX, chatbot QA. Curious about the hidden processes behind things.
+I'm Crystal. I cook, read, make things, and acquire new interests with very little regard for the number of existing ones.
+
+I'm interested in technology, food, language, and the hidden processes behind things. I have a habit of getting curious about something and following it considerably further than I originally intended.
+
+My professional background includes applied linguistics, data science, customer experience, and QA. Cooking was a past life.
+
+This site is somewhere to put my [[Projects]], [[Writing]], and [[Notes]] without pretending they're finished or particularly related. Some of it is about learning with technology. Some of it is experimentation. Some of it is simply something I found interesting enough to write down.
