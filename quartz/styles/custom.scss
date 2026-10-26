@@ -757,3 +757,14 @@ body[data-slug="recipes"] .content-meta {
     grid-area: grid-center;
   }
 }
+
+
+// ============================================================
+// Hide content-meta on all collection index pages
+// Config exclusion not taking effect for folder pages
+// ============================================================
+body[data-slug="recipes\/index"] .content-meta,
+body[data-slug="notes\/index"] .content-meta,
+body[data-slug="projects\/index"] .content-meta {
+  display: none !important;
+}
