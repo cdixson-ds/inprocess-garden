@@ -665,3 +665,58 @@ body[data-slug="projects"] .content-meta,
 body[data-slug="recipes"] .content-meta {
   display: none !important;
 }
+
+
+// ============================================================
+// MOBILE FINAL FIX: sidebar.left column layout
+// ============================================================
+// base.scss sets sidebar.left to flex-direction: row on mobile.
+// We need column so nav and graph stack vertically above the article.
+
+@media all and ($mobile) {
+  #quartz-body > .sidebar.left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0.75rem 1rem !important;
+    padding-top: 0.75rem !important;
+    gap: 0.5rem !important;
+    height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  // Graph in left sidebar on mobile: full width, reasonable height
+  #quartz-body > .sidebar.left .graph {
+    width: 100% !important;
+    margin-top: 0.5rem;
+  }
+
+  #quartz-body > .sidebar.left .graph .graph-outer {
+    height: 160px !important;
+    min-height: 140px !important;
+    max-height: 160px !important;
+    width: 100% !important;
+  }
+
+  // flex-component (search+darkmode) stays as row within column sidebar
+  #quartz-body > .sidebar.left .flex-component {
+    width: 100%;
+  }
+
+  // Primary nav: row wrap on mobile, full width
+  #quartz-body > .sidebar.left .primary-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+
+  // Sticky sidebar: solid background, z-index above content
+  #quartz-body > .sidebar.left {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    background-color: var(--light) !important;
+    border-bottom: 1px solid var(--lightgray) !important;
+  }
+}
