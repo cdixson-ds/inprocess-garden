@@ -162,8 +162,8 @@ plugins:
   - source: "@quartz-community/graph"
     enabled: true
     layout:
-      position: right
-      priority: 10
+      position: left
+      priority: 60
   - source: "@quartz-community/search"
     enabled: true
     layout:
@@ -175,8 +175,8 @@ plugins:
   - source: "@quartz-community/backlinks"
     enabled: true
     layout:
-      position: right
-      priority: 50
+      position: afterBody
+      priority: 10
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
@@ -280,10 +280,12 @@ layout:
         - reader-mode
         - content-meta
         - breadcrumbs
+        - article-title
     tag:
       exclude:
         - reader-mode
         - content-meta
         - breadcrumbs
+        - article-title
     canvas: {}
     bases: {}

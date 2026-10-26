@@ -585,3 +585,83 @@ details[open] .nav-chevron {
     display: none;
   }
 }
+
+
+// ============================================================
+// FINAL LAYOUT CORRECTIONS
+// ============================================================
+
+// --- Desktop: left column now contains nav + graph ---
+// Graph moved to left in config (priority 60, below nav at priority-based order)
+// Ensure left sidebar can accommodate both without overflow
+
+@media not all and ($mobile) {
+  .sidebar.left {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Graph in left sidebar: reasonable height, not too tall
+  .sidebar.left .graph .graph-outer {
+    height: 220px !important;
+    min-height: 200px;
+    max-height: 220px;
+  }
+
+  .sidebar.left .graph h3 {
+    display: none; // title redundant in sidebar context
+  }
+}
+
+// --- Mobile: graph in sidebar-right, appears before article now ---
+// sidebar-right is grid-area: grid-sidebar-right, now ordered before grid-center
+@media all and ($mobile) {
+  .sidebar.right {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .sidebar.right .graph .graph-outer {
+    height: 180px !important;
+    min-height: 160px;
+    max-height: 180px;
+  }
+
+  .sidebar.right .graph h3 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 0.4rem;
+  }
+}
+
+// --- Backlinks: now afterBody, style as subdued section ---
+.backlinks {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.backlinks h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 0.75rem;
+}
+
+// --- Collection pages: ArticleTitle excluded, markdown H1 is the title ---
+// The markdown H1 in collection index.md now serves as the only heading
+// No further CSS needed - structural fix in config + content
+
+// --- Hide content-meta on folder index pages (already excluded in config) ---
+// Belt-and-suspenders for any edge cases
+body[data-slug="notes"] .content-meta,
+body[data-slug="projects"] .content-meta,
+body[data-slug="recipes"] .content-meta {
+  display: none !important;
+}
