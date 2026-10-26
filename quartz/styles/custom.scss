@@ -745,3 +745,15 @@ body[data-slug="recipes"] .content-meta {
 
 // Both content and folder pages get consistent center column treatment
 // The popover-hint wrapper is on both, no extra padding needed
+
+
+// ============================================================
+// CONFIRMED FIX (Chrome DevTools verified 2026-10-25)
+// .center was not assigned grid-area: grid-center on mobile,
+// causing auto-placement to render article before nav.
+// ============================================================
+@media (max-width: 800px) {
+  .page > #quartz-body > .center {
+    grid-area: grid-center;
+  }
+}
