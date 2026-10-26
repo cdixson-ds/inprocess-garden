@@ -720,3 +720,28 @@ body[data-slug="recipes"] .content-meta {
     border-bottom: 1px solid var(--lightgray) !important;
   }
 }
+
+
+// ============================================================
+// FIX: Remove excessive mobile sidebar top padding
+// base.scss sets padding: 2rem 0 0 on mobile sidebar.left
+// This creates blank space at top before nav appears
+// ============================================================
+@media all and ($mobile) {
+  .page > #quartz-body > .sidebar.left {
+    padding-top: 0 !important;
+  }
+}
+
+// ============================================================
+// FIX: About page alignment
+// Ensure content pages and folder pages share the same
+// center column padding and max-width
+// ============================================================
+.center > .page-header,
+.center > article {
+  box-sizing: border-box;
+}
+
+// Both content and folder pages get consistent center column treatment
+// The popover-hint wrapper is on both, no extra padding needed
