@@ -404,3 +404,184 @@ body[data-slug="about"] .content-meta {
     min-height: 200px !important;
   }
 }
+
+
+// ============================================================
+// ASSIGNMENT 03 REFINEMENTS
+// ============================================================
+
+// --- Hide reader mode button ---
+button.readermode,
+.readermode {
+  display: none !important;
+}
+
+// --- Hide "Home" article title on homepage ---
+body[data-slug="index"] h1.article-title {
+  display: none !important;
+}
+
+// --- Sticky left sidebar (desktop) ---
+@media not all and ($mobile) {
+  .sidebar.left {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    align-self: flex-start;
+  }
+}
+
+// --- Sticky mobile header ---
+@media all and ($mobile) {
+  .sidebar.left {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--light);
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 0.75rem !important;
+  }
+
+  // Offset anchor targets so sticky header doesn't cover them
+  :target {
+    scroll-margin-top: 5rem;
+  }
+}
+
+// --- Nested nav: details/summary styling ---
+.nav-group {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.2rem 0;
+}
+
+.nav-group-label::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group-label a {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--darkgray);
+  text-decoration: none;
+  padding: 0;
+  border-bottom: none !important;
+  background: none !important;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.nav-group-label a:hover,
+.nav-group-label a.active {
+  color: var(--secondary);
+}
+
+.nav-chevron {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 1.5px solid var(--gray);
+  border-bottom: 1.5px solid var(--gray);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+details[open] .nav-chevron {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.nav-children {
+  list-style: none;
+  margin: 0.2rem 0 0.2rem 0.75rem;
+  padding: 0;
+  border-left: 1px solid var(--lightgray);
+  padding-left: 0.6rem;
+}
+
+.nav-children li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-children a {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.825rem;
+  color: var(--gray);
+  text-decoration: none;
+  display: block;
+  padding: 0.15rem 0;
+  border-bottom: none !important;
+  background: none !important;
+  transition: color 0.15s ease;
+}
+
+.nav-children a:hover,
+.nav-children a.active {
+  color: var(--secondary);
+}
+
+// --- Breadcrumb alignment fix ---
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.breadcrumb-element {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumb-element p {
+  margin: 0;
+  line-height: 1;
+  display: inline;
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.breadcrumb-element a {
+  line-height: 1;
+  font-size: 0.75rem;
+}
+
+// --- Mobile nav: keep compact in header area ---
+@media all and ($mobile) {
+  .primary-nav {
+    font-size: 0.85rem;
+  }
+
+  .nav-group,
+  .nav-group-label {
+    display: inline-flex;
+    margin-right: 0.75rem;
+  }
+
+  // On mobile, hide nested children (Projects links to index only)
+  .nav-children {
+    display: none;
+  }
+
+  details[open] .nav-children {
+    display: none;
+  }
+
+  .nav-chevron {
+    display: none;
+  }
+}

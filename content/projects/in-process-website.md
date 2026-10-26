@@ -5,8 +5,6 @@ tags: [projects, web, obsidian, quartz]
 status: active
 ---
 
-# In Process Website
-
 Building `inprocess.garden` - a personal digital garden for projects, notes, and recipes.
 
 ## Stack

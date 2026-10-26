@@ -106,32 +106,79 @@ export default (() => {
         })}
       <script dangerouslySetInnerHTML={{__html: `
 (function() {
+  var NAV_ITEMS = [
+    {
+      label: 'Projects',
+      href: '/projects/',
+      slug: 'projects',
+      children: [
+        { label: 'In Process Website', href: '/projects/in-process-website', slug: 'projects/in-process-website' }
+      ]
+    },
+    { label: 'Notes', href: '/notes/', slug: 'notes' },
+    { label: 'Recipes', href: '/recipes/', slug: 'recipes' },
+    { label: 'About', href: '/about', slug: 'about' }
+  ];
+
   function injectNav() {
     var sidebar = document.querySelector('.sidebar.left');
     if (!sidebar || document.querySelector('.primary-nav')) return;
-    var baseDir = document.body.dataset.basepath !== undefined
-      ? (document.body.dataset.basepath || '')
-      : '';
+    var currentSlug = document.body.dataset.slug || '';
+
     var nav = document.createElement('nav');
     nav.className = 'primary-nav';
-    var links = [
-      ['Projects', baseDir + '/projects/'],
-      ['Notes', baseDir + '/notes/'],
-      ['Recipes', baseDir + '/recipes/'],
-      ['About', baseDir + '/about']
-    ];
-    links.forEach(function(l) {
-      var a = document.createElement('a');
-      a.href = l[1];
-      a.textContent = l[0];
-      var currentSlug = document.body.dataset.slug || '';
-      var section = l[0].toLowerCase();
-      if (currentSlug === section || currentSlug.startsWith(section + '/')) {
-        a.className = 'active';
+    nav.setAttribute('aria-label', 'Primary navigation');
+
+    NAV_ITEMS.forEach(function(item) {
+      var isActive = currentSlug === item.slug || currentSlug.startsWith(item.slug + '/');
+
+      if (item.children && item.children.length) {
+        // Item with nested children
+        var details = document.createElement('details');
+        details.className = 'nav-group';
+        if (isActive) details.setAttribute('open', '');
+
+        var summary = document.createElement('summary');
+        summary.className = 'nav-group-label';
+
+        var parentLink = document.createElement('a');
+        parentLink.href = item.href;
+        parentLink.textContent = item.label;
+        if (isActive) parentLink.className = 'active';
+        parentLink.addEventListener('click', function(e) { e.stopPropagation(); });
+
+        var chevron = document.createElement('span');
+        chevron.className = 'nav-chevron';
+        chevron.setAttribute('aria-hidden', 'true');
+
+        summary.appendChild(parentLink);
+        summary.appendChild(chevron);
+        details.appendChild(summary);
+
+        var childList = document.createElement('ul');
+        childList.className = 'nav-children';
+        item.children.forEach(function(child) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = child.href;
+          a.textContent = child.label;
+          if (currentSlug === child.slug || currentSlug.startsWith(child.slug + '/')) {
+            a.className = 'active';
+          }
+          li.appendChild(a);
+          childList.appendChild(li);
+        });
+        details.appendChild(childList);
+        nav.appendChild(details);
+      } else {
+        var a = document.createElement('a');
+        a.href = item.href;
+        a.textContent = item.label;
+        a.className = 'nav-link' + (isActive ? ' active' : '');
+        nav.appendChild(a);
       }
-      nav.appendChild(a);
     });
-    // Insert after toolbar flex-component (search+darkmode)
+
     var toolbar = sidebar.querySelector('.flex-component');
     if (toolbar) {
       toolbar.parentNode.insertBefore(nav, toolbar.nextSibling);
@@ -139,13 +186,17 @@ export default (() => {
       sidebar.appendChild(nav);
     }
   }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', injectNav);
   } else {
     injectNav();
   }
-  // Re-inject on SPA navigation
-  document.addEventListener('nav', injectNav);
+  document.addEventListener('nav', function() {
+    var existing = document.querySelector('.primary-nav');
+    if (existing) existing.remove();
+    injectNav();
+  });
 })();
 `}} />
 
